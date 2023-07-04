@@ -1,5 +1,7 @@
 import React from 'react'
 import { styled } from 'styled-components'
+import Scene from './Scene'
+import Cube from './figure/Cube'
 
 const Section = styled.div`
   height: 100vh;
@@ -60,7 +62,9 @@ const Who = () =>{
             <Section>
                 <Container>
                   <Left>
-                    {/* 3d model*/}
+                    <Scene autoRotate = {true} camera = {{fov: 25, position: [5,5,5] }}>
+                      <Cube/>
+                    </Scene>
                   </Left>
                   <Right>
                     <Title>Think outside the square space</Title>

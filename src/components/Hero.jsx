@@ -1,6 +1,8 @@
 import React from 'react'
 import { styled } from 'styled-components'
 import { Navbar } from './Navbar'
+import Scene from './Scene'
+import Sphere from './figure/Sphere'
 
 const Section = styled.div`
   height: 100vh;
@@ -68,6 +70,7 @@ const Img = styled.img`
   margin: auto;
   inset: 0;
   animation: animate 2s infinite ease alternate;
+  pointer-events: none;
   
   @keyframes animate {
     from{
@@ -94,7 +97,9 @@ const Hero = () =>{
                     <Button>Learn more</Button>
                   </Left>
                   <Right>
-                    {/* 3d model*/}
+                    <Scene>
+                      <Sphere/>
+                    </Scene>
                     <Img src="./img/moon.png"/>
                   </Right>
                 </Container>
