@@ -9,6 +9,7 @@ const Section = styled.div`
     z-index: 10;
     @media(max-width: 768px){
         transform: translateY(100%);
+        width: 100%;
     }
 `
 const Container = styled.div`
@@ -20,6 +21,7 @@ const Container = styled.div`
     padding: 10px 0;
     @media(max-width: 768px){
         padding: 10px;
+        width: 100%;
     }
 `
 const Links = styled.div`
