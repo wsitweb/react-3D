@@ -6,13 +6,9 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-yarn.lock
-vite.config.js
-index.html
+# yarn.lock
 
 node_modules
-src
-public
 dist
 dist-ssr
 *.local
