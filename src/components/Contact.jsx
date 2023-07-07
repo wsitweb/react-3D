@@ -13,12 +13,21 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 50px;
+  @media(max-width: 768px){
+    flex-direction: column;
+    display: block;
+  }
 `
 const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  @media(max-width: 768px){
+    justify-content: center;
+    height: 100vh;
+    z-index: 10;
+  }
 `
 const Title = styled.h1`
   font-weight: 200;
@@ -31,6 +40,9 @@ const Form = styled.form`
   gap: 25px;
   height: 100%;
   justify-content: center;
+  @media(max-width: 768px){
+    width: 260px;
+  }
 `
 const Input = styled.input`
   padding: 20px;
@@ -59,6 +71,14 @@ const Button = styled.button`
 `
 const Right = styled.div`
   flex: 1;
+  @media(max-width: 768px){
+    flex: 1;
+    pointer-events: none;
+    opacity: 0.3;
+    transform: translateY(-100%);
+    height: 100%;
+    width: 100%;
+  }
 `
 
 const Contact = () =>{

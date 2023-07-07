@@ -10,14 +10,23 @@ const Section = styled.div`
   flex-direction: column;
   display: flex;
   align-items: center;
-
+  @media(max-width: 768px){
+        height: 200vh;
+        scroll-snap-align: none;
+    }
 `
 const Container = styled.div`
-  height: 100vh;
+  height: 100%;
   max-width: 1400px;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  @media(max-width: 768px){
+        height: calc(100% - 70px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+  }
 `
 const Left = styled.div`
   flex: 2;
@@ -25,9 +34,29 @@ const Left = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 20px;
+  height: 100%;
+  z-index: 10;
+  min-width: 300px;
+  @media(max-width: 768px){
+    flex: 1;
+    scroll-snap-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+    max-width: 500px;
+    max-height: 100vh;
+    height: 100vh;
+  }
 `
 const Title = styled.h1`
-  font-size: 74px;
+  font-size: 70px;
+  @media(max-width: 768px){
+    text-align: center;
+    font-size: 44px;
+  }
+  @media(max-width: 1024px){
+    font-size: 50px;
+  }
 `
 const WhatWedo = styled.div`
   display: flex; 
@@ -54,23 +83,32 @@ const Button = styled.button`
   border-radius: 5px;
   cursor: pointer;
 `
-
-
 const Right = styled.div`
   flex: 3;
   position: relative;
+  overflow: visible;
+  margin: -100px;
+  @media(max-width: 768px){
+    flex: 1;
+    scroll-snap-align: center;
+    width: 100%;
+    max-height: 100vh;
+    height: 100%;
+  }
 `
 const Img = styled.img`
   max-width: 800px;
   width: 100%;
   max-height: 600px;
-  height: 100%;
+  height: 60%;
   object-fit: contain;
   position: absolute;
   margin: auto;
   inset: 0;
   animation: animate 2s infinite ease alternate;
-  pointer-events: none;
+  @media(min-width: 769px){
+    pointer-events: none;
+  }
   
   @keyframes animate {
     from{
@@ -97,9 +135,9 @@ const Hero = () =>{
                     <Button>Learn more</Button>
                   </Left>
                   <Right>
-                    <Scene>
+                    <Scene camera = {{fov: 45, position: [5,5,5] }} adaptiveRotate={true}>
                       <Sphere/>
-                    </Scene>
+                    </Scene >
                     <Img src="./img/moon.png"/>
                   </Right>
                 </Container>

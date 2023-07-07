@@ -5,21 +5,35 @@ import Cube from './figure/Cube'
 
 const Section = styled.div`
   height: 100vh;
-  scroll-snap-align: center;
   display: flex;
   justify-content: center;
+  scroll-snap-align: center;
+  @media(max-width: 768px){
+    height: 100vh;
+    scroll-snap-align: none;
+  }
 `
 const Container = styled.div`
   height: 100vh;
-  scroll-snap-align: center;
   max-width: 1400px;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  @media(max-width: 768px){
+    height: 100%;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
 `
 const Left = styled.div`
   flex: 1;
   position: relative;
+  @media(max-width: 768px){
+    scroll-snap-align: center;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
 `
 const Right = styled.div`
   flex: 1;
@@ -27,9 +41,28 @@ const Right = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 20px;
+  z-index: 10;
+  min-width: 300px;
+  @media(max-width: 768px){
+    flex: 1;
+    scroll-snap-align: center;
+    align-items: center;
+    padding: 0px 20px 0 20px;
+    max-width: 500px;
+    scroll-snap-align: center;
+    height: 100%;
+    padding: 0px 20px 0 20px;
+    }
 `
 const Title = styled.h1`
-  font-size: 74px;
+  font-size: 70px;
+  @media(max-width: 768px){
+    text-align: center;
+    font-size: 44px;
+  }
+  @media(max-width: 1024px){
+    font-size: 50px;
+  }
 `
 const WhatWedo = styled.div`
   display: flex; 
