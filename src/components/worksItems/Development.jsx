@@ -27,7 +27,7 @@ const Desc = styled.div`
 const Development = () => {
   return (
     <>
-      <Scene autoRotate={false} >
+      <Scene autoRotate={window.innerWidth < 768} >
         <Stage environment='city' intensity={0.6}>
           <Atom />
         </Stage>

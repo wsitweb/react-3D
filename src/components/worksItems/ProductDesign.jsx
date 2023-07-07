@@ -27,7 +27,7 @@ const Desc = styled.div`
 const ProductDesign = () => {
   return (
       <>
-        <Scene autoRotate={false} >
+        <Scene autoRotate={window.innerWidth < 768} >
           <Stage environment='city' intensity={0.6}>
             <Shoe />
           </Stage>
