@@ -12,7 +12,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 export default function Model(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/3dModel/chair-transformed.glb')
+  const { nodes, materials, animations } = useGLTF('./3dModel/chair-transformed.glb')
   const { actions } = useAnimations(animations, group)
   // actions.play()
   return (
@@ -29,4 +29,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('/3dModel/chair-transformed.glb')
+useGLTF.preload('./3dModel/chair-transformed.glb')

@@ -55,7 +55,7 @@ const List = styled.ul`
   @media(max-width: 768px){
     gap: 10px;
   }
-` 
+`
 const ListItem = styled.li`
   font-size: ${genSize*2.5}px;
   font-weight: bold;
@@ -99,6 +99,18 @@ const Right = styled.div`
     height: 100%;
   }
 `
+const RightBlock = styled.div`
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  @media(max-width: 768px){
+    display: block;
+  }
+`
 
 function Works() {
   const [work, setWork] = useState('Web Design')
@@ -118,6 +130,7 @@ function Works() {
             </List>
           </Left>
           <Right>
+            <RightBlock></RightBlock>
             {work === 'Web Design' ? (<WebDesign/>
               ):work === 'Development' ? (<Development/>
               ):work === 'Illustration'? (<Illustration/>

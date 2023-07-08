@@ -15,6 +15,7 @@ const Desc = styled.div`
   position: absolute;
   top: 20%;
   right: 5%;
+  z-index: 2;
   @media(max-width: 768px){
     font-size: 12px;
     width: 200px;

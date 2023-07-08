@@ -3,7 +3,7 @@ import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 
 export default function Shoe({ color, ...props }) {
-  const { nodes, materials } = useGLTF("/3dModel/shoe.gltf");
+  const { nodes, materials } = useGLTF("./3dModel/shoe.gltf");
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -70,4 +70,4 @@ export default function Shoe({ color, ...props }) {
   );
 }
 
-useGLTF.preload("/3dModel/shoe.gltf");
+useGLTF.preload("./3dModel/shoe.gltf");
