@@ -79,6 +79,8 @@ const Button = styled.button`
 `
 const Right = styled.div`
   flex: 1;
+  mask-image: radial-gradient(circle at center, black 0%,transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at center, black 0%,transparent 70%);
   @media(max-width: 768px){
     flex: 1;
     pointer-events: none;
