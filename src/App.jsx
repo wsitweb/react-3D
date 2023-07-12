@@ -3,6 +3,8 @@ import Contact from "./components/Contact"
 import Hero from "./components/Hero"
 import Who from "./components/Who"
 import Works from "./components/Works"
+import Preloader from "./components/Preloader"
+import { useEffect, useState } from "react"
 
 const Container = styled.div`
   height: 100vh;
@@ -19,13 +21,24 @@ const Container = styled.div`
 
 function App() {
 
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const handleLoad = () => {
+      setIsLoading(true);
+    };
+    setTimeout(handleLoad, 3000)
+  }, []);
   return (
-    <Container>
-      <Hero/>
-      <Who/>
-      <Works/>
-      <Contact/>
-    </Container>
+    <>
+    <Preloader isLoading = {isLoading?'done': false}/>
+      <Container>
+        <Hero/>
+        <Who/>
+        <Works/>
+        <Contact/>
+      </Container>
+    </>
   )
 }
 

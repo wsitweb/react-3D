@@ -11,32 +11,19 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    &.done{
+      transform: translateY(-100%);
+      user-select: none;
+      pointer-events: none;
+    }
 `
-
-function Preloader() {
-    const [isLoading, setIsLoading] = useState(true);
-    useEffect(() => {
-        const handleLoad = () => {
-          setIsLoading(false);
-        };
-        window.addEventListener('load', handleLoad);
-    
-        return () => {
-          window.removeEventListener('load', handleLoad);
-        };
-      }, []);
-
+function Preloader(props) {
+  
   return (
     <>
-        {isLoading ? (
-            <Container>
-            <Rings width={100} height={100} radius='20' color='#5405B9' wrapperStyle={{scale: '2.5'}}/>
-            </Container>
-        ) : (
-            <Container style={{transform: 'translateX(-100%)'}}>
-                <Rings width={100} height={100} radius='20' color='#5405B9' wrapperStyle={{scale: '2.5'}}/>
-            </Container>
-        )}
+        <Container className={props.isLoading} >
+          <Rings width={100} height={100} radius='20' color='#5405B9' wrapperStyle={{scale: '2.5'}}/>
+        </Container>
     </>
   )
 }
